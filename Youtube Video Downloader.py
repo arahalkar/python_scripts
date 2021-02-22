@@ -15,6 +15,7 @@ for i in urls_list:
     #url = i[3:]
     print(i.rfind('https'))
     print(i.rsplit('//'))
+    #added in the webbrowser
     
     #if url[:5] != 'https':
      #   continue
