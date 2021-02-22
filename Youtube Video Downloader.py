@@ -12,21 +12,12 @@ while True:
         break 
 
 for i in urls_list:
-    #url = i[3:]
-    print(i.rfind('https'))
-    print(i.rsplit('//'))
-    #added in the webbrowser 
-    #Now add in the VS code     
-    
-    #if url[:5] != 'https':
-     #   continue
-    try:
-        video=YouTube(url)
-        video.streams.get_by_itag(18).download()
-    except:
-        print("connection error")
-
-
-
-
-
+    url = i.rsplit('https://')
+    if(len(url)>1): 
+        try:
+            url = ('https://').join(url)
+            print(url)
+            video=YouTube(url)
+            video.streams.get_by_itag(18).download()
+        except:
+            print("connection error")
